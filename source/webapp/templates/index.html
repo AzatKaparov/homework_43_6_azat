@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div class="container">
+    <form action="/result/give/" method="POST">
+        {% csrf_token %}
+        <h1>It is calculator!</h1>
+        <select name="action" class="choose">
+                <option value="+">Add +</option>
+                <option value="-">Subtract -</option>
+                <option value="*">Multiply *</option>
+                <option value="/">Divide /</option>
+        </select>
+        <br/>
+        <label>
+            First number: <input class="input" type="number" name="first" /> <br>
+        </label>
+        <label>
+            Second number: <input class="input" type="number" name="second" /> <br>
+        </label>
+        <br/>
+        <input id="submit" type="submit" value="Calculate!"/>
+        <br/>
+    </form>
+</div>
+</body>
+</html>
